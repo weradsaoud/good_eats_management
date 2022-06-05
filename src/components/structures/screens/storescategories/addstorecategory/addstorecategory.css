@@ -1,0 +1,27 @@
+.addCategoryContainer {
+    margin-top: 50px;
+    display: inline-block;
+    text-align: center;
+}
+
+.SCategoryNameDiv {
+    margin-bottom: 20px;
+    width: fit-content;
+    display: inline-block;
+    text-align: left;
+}
+
+.addCatBtn {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.NavLinkClass {
+    text-decoration: none;
+    color: inherit;
+}
+
+.SCategoryNameTextField{
+    width: 100%;
+}

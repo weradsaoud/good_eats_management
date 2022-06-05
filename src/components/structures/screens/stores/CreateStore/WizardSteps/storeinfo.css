@@ -1,0 +1,250 @@
+.name_phone_div {
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+}
+
+.canDeliver_div {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.Email_Tables_div {
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.canPickup_div {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.canTableOrder_div {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.firstContainer {
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    padding-top: 10px;
+}
+
+.NameTextField {
+    margin-right: 15px !important;
+}
+
+.EmailTextField {
+    margin-right: 15px !important;
+}
+
+.DeliverMinTextField {
+    margin-left: 10px;
+}
+
+.PickupMinTextField {
+    margin-left: 10px;
+}
+
+.TableOrderMinTextField {
+    margin-left: 0px;
+}
+
+.describtionDiv {
+    margin-top: 20px;
+    min-width: 100%;
+}
+
+.descriptionTextField {
+    width: 100%;
+}
+
+.secondContainer {
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+.secondLeftDiv{
+    width: 30%;
+}
+.coverDiv {
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.coverPhotoClass{
+    width: 100px;
+}
+.saterdayDiv {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.satFromTextField {
+    width: 100px;
+}
+
+.satToTextField {
+    width: 100px;
+    margin-left: 20px !important;
+}
+
+.dayCheckBox {
+    margin-right: 20px !important;
+}
+
+.secondRightDiv {
+    display: flex;
+    text-align: center;
+    justify-content: space-evenly;
+}
+
+.daysDiv {
+    text-align: justify;
+}
+
+.satDiv {
+    margin-bottom: 10px;
+}
+
+.sunDiv {
+    margin-bottom: 9px;
+}
+
+.monDiv {
+    margin-bottom: 8px;
+}
+
+.tueDiv {
+    margin-bottom: 7px;
+}
+
+.wedDiv {
+    margin-bottom: 6px;
+}
+
+.thuDiv {
+    margin-bottom: 5px;
+}
+
+.friDiv {
+    margin-bottom: 4px;
+}
+
+.satFrom {
+    margin-bottom: 10px;
+}
+
+.sunFrom {
+    margin-bottom: 10px;
+}
+
+.monFrom {
+    margin-bottom: 10px;
+}
+
+.tueFrom {
+    margin-bottom: 10px;
+}
+
+.wedFrom {
+    margin-bottom: 10px;
+}
+
+.thurFrom {
+    margin-bottom: 10px;
+}
+
+.friFrom {
+    margin-bottom: 10px;
+}
+
+.satTo {
+    margin-bottom: 10px;
+}
+
+.sunTo {
+    margin-bottom: 10px;
+}
+
+.monTo {
+    margin-bottom: 10px;
+}
+
+.tueTo {
+    margin-bottom: 10px;
+}
+
+.wedTo {
+    margin-bottom: 10px;
+}
+
+.thurTo {
+    margin-bottom: 10px;
+}
+
+.friTo {
+    margin-bottom: 10px;
+}
+
+.activeDiv {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.logoDiv {
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.ownerDiv {
+    display: block;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.categoryDiv {
+    display: block;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.ctrlBtns {
+    padding: 0px 50px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 0px;
+    background-color: white;
+    height: 50px;
+    width: 80%;
+    z-index: 10000;
+}
+
+.endBtns {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.navBtns {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+}

@@ -1,0 +1,105 @@
+.optionsDiv {
+    display: block;
+    text-align: center;
+    justify-content: center;
+}
+
+.itemsDropDownDiv {
+    display: flex;
+    text-align: center;
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.optionsForItemDiv {
+    margin-bottom: 20px;
+}
+
+.itemOptionsDiv {
+    text-align: left;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: medium inset rgb(228, 172, 108);
+}
+
+.nameValuesDiv {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.nameDiv {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.valueDiv {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.optionMinusBtnDiv {
+    display: flex;
+    align-items: flex-start;
+}
+
+.optionAddBtnDiv {
+    display: flex;
+    align-items: flex-start;
+}
+
+.optionNameInputDiv {
+    margin-left: 10px;
+}
+
+.itemOptionValueFakeAddBtnDiv {
+    display: flex;
+    align-items: flex-end;
+}
+
+.RemoveCircleFake {
+    font-size: 40px !important;
+    color: white;
+}
+
+.IconButtonClass {
+    padding: 0px !important;
+}
+.AddCircleValues{
+    font-size: 30px !important;
+    color: #4BB543;
+}
+.RemoveCircleFakeValues{
+    font-size: 30px !important;
+    color: white;
+}
+.RemoveCircleValues{
+    font-size: 30px !important;
+    color: #F32013;
+}
+.optionValueMinusBtnDiv{
+    display: flex;
+}
+.optionValueAddBtnDiv{
+    display: flex;
+}
+
+.removeAddItemDiv{
+    display: flex;
+    padding-left: 20px;
+}
+.removeItemDiv{
+    margin-right: 5px;
+}
+.addItemDiv{
+    margin-left: 5px;
+}
+.allItemsOptionsDiv{
+    height: 83vh;
+    /* padding-bottom: 30px; */
+    overflow: scroll;
+}

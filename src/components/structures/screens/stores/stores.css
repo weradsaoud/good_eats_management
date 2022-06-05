@@ -1,0 +1,35 @@
+.dataGridContainer {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.addButton {
+    background-color: #66bb6a;
+    border-radius: 5px;
+    border-color: #388e3c;
+    height: fit-content;
+    padding: 4px 10px;
+    text-align: center;
+}
+.btnsDiv{
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    margin-right: 10px;
+}
+.filterDiv{
+    margin: 0px 20px;
+}
+.coverPhotoTableClass{
+    width: 100px;
+    padding: 10px;
+}
+.deleteStoreLoader{
+    display: flex;
+    align-items: center;
+}

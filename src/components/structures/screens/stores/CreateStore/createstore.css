@@ -1,0 +1,14 @@
+.WizardHeaderDiv {
+    text-align: center;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 50px;
+    background-color: white;
+    height: 50px;
+    z-index: 10000;
+}
+
+.WizardBodyDiv {
+    padding: 0px 10px 0px 10px;
+
+}

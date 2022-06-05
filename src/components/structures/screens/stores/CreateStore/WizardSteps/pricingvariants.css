@@ -1,0 +1,26 @@
+.pricingVariantsDiv{
+    margin-top: 10px;
+    height: 84vh;
+    overflow: scroll;
+}
+
+.variantDiv{
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.variantNameP{
+    display: inline-flex;
+    margin-right: 5px;
+}
+
+.variantLabelDiv{
+    width: 50%;
+    display: flex;
+    margin-bottom: 15px;
+    padding-left: 20px;
+}
+.extrasDropDownDiv{
+    padding-right: 20px;
+}

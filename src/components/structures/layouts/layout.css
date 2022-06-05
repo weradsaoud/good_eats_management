@@ -1,0 +1,9 @@
+.scontainer {
+    display: flex;
+}
+
+.bodyContainer{
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+}

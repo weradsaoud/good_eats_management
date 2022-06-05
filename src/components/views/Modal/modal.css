@@ -1,0 +1,8 @@
+.warning_title{
+    color: #EDE04D;
+}
+.ok_unkowncontaner{
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+}

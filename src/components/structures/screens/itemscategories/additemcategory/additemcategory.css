@@ -1,0 +1,19 @@
+.itemsCategoriesDiv {
+    height: 89vh;
+    overflow: scroll;
+}
+
+.store_itemscategories_div {
+    display: block;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: medium inset rgb(228, 172, 108);
+}
+.store_dropdown_div{
+    display: block;
+    text-align: left;
+    margin-bottom: 20px;
+    padding: 10px 0 0 10px;
+}

@@ -1,0 +1,62 @@
+.itemDiv {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: medium inset rgb(228, 172, 108);
+}
+.allItemsDiv{
+    height: 83vh;
+    /* padding-bottom: 30px; */
+    overflow: scroll;
+}
+.firstRow {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.secondRow {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+
+}
+.itemImgDiv{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    margin-right: 20px;
+}
+.itemImg{
+    width:100px;
+    height: 100px;
+}
+.itemRightDiv {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    padding: 0px 0px 0px 20px;
+}
+
+.itemdescriptionTextField {
+    width: 60%
+}
+
+.itemCategoryDropDiv {
+    padding: 0px;
+    margin: 0px 15px 0px 0px;
+}
+
+.itemMinusBtnDiv {
+    display: flex;
+    align-items: flex-end;
+}
+
+.itemAddBtnDiv {
+    display: flex;
+    align-items: flex-end;
+
+}

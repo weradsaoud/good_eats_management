@@ -1,0 +1,15 @@
+.logInFormDiv {
+    width: 30%;
+    position: absolute;
+    top: 30vh;
+    left: 35%;
+}
+
+.remeberMeDiv{
+    display: flex;
+    justify-content: space-between;
+}
+
+.forgotPasswordLink{
+    cursor: pointer;
+}

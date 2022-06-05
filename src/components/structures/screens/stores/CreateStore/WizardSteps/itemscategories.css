@@ -1,0 +1,27 @@
+.itemCategoryDiv {
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.addMinusDiv {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.AddCircle {
+    font-size: 40px !important;
+    color: #4BB543;
+}
+
+.RemoveCircle {
+    font-size: 40px !important;
+    color: #F32013;
+}
+
+.RemoveCircleee {
+    font-size: 40px !important;
+    color: white;
+}
