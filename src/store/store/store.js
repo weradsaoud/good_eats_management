@@ -8,6 +8,7 @@ import storesCategoriesReducer from '../reducers/storesCategoriesReducer';
 import createStoreReducer from '../reducers/createStoreReducer';
 import storesReducer from '../reducers/storesReducer';
 import itemsCategoriesReducer from '../reducers/itemsCategoriesReducer';
+import ordersReducer from '../reducers/ordersReducer';
 // saga middleware
 import createSagaMiddleware from 'redux-saga';
 import { applyMiddleware } from 'redux';
@@ -21,8 +22,9 @@ const rootReducer = combineReducers({
     view: viewReducer,
     storesCategories: storesCategoriesReducer,
     createStore: createStoreReducer,
-    stores:storesReducer,
-    itemsCategories: itemsCategoriesReducer
+    stores: storesReducer,
+    itemsCategories: itemsCategoriesReducer,
+    orders: ordersReducer
 });
 
 const sagaMiddleware = createSagaMiddleware();

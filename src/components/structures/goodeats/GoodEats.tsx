@@ -28,7 +28,9 @@ import AddItemCategory from "../screens/itemscategories/additemcategory/AddItemC
 interface IProps {
     login: any,
     view: any,
-    onDidmount: any
+    onDidmount: any,
+    getNewOrders: any,
+    getLastOrderId: any
 }
 
 interface IState {
@@ -42,6 +44,10 @@ class GoodEats extends Component<IProps, IState>{
         this.props.onDidmount();
         //console.log('goodeats props: ', this.props);
         toast.configure();
+        this.props.getLastOrderId();
+        setInterval(() => {
+            this.props.getNewOrders();
+        }, 10000);
     }
 
     public render(): React.ReactNode {
@@ -100,7 +106,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onDidmount: () => dispatch({ type: actionsTypes.LOAD_CONFIG })
+        onDidmount: () => dispatch({ type: actionsTypes.LOAD_CONFIG }),
+        getNewOrders: () => dispatch({type: actionsTypes.GETNEWORDERS}),
+        getLastOrderId: ()=>dispatch({type: actionsTypes.GETLASTORDERID})
     }
 };
 

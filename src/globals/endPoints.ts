@@ -13,7 +13,8 @@ const endPoints = {
     updateStore: "api/updateStore",
     //items categories end points
     itemsCategories: 'api/itemsCategories',
-    uploadItemsCategories: 'api/saveItemsCategories'
+    uploadItemsCategories: 'api/saveItemsCategories',
+    getOrders: 'api/getOrders'
 }
 
 export default endPoints;

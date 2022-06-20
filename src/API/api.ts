@@ -56,3 +56,7 @@ export const fetchItemsCategories = () => {
 export const uploadItemsCategories = (toAddItemsCategories) => {
     return network.post(endPoints.uploadItemsCategories, { params: toAddItemsCategories, headers: null });
 };
+
+export const getOrders = () => {
+    return network.get(endPoints.getOrders);
+};
