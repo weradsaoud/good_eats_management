@@ -14,7 +14,9 @@ const endPoints = {
     //items categories end points
     itemsCategories: 'api/itemsCategories',
     uploadItemsCategories: 'api/saveItemsCategories',
-    getOrders: 'api/getOrders'
+    //orders
+    getNewOrders: 'api/getNewOrders',
+    getLastOrderId: 'api/getLastOrderId'
 }
 
 export default endPoints;

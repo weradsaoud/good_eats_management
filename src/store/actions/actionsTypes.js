@@ -87,6 +87,8 @@ export const RESET_IC_F = 'RESET_IC_F';
 //orders
 export const GETNEWORDERS = 'GETNEWORDERS';
 export const GETLASTORDERID = 'GETLASTORDERID';
+export const SAVELASTORDERID = 'SAVELASTORDERID';
+export const SAVENEWORDERS = 'SAVENEWORDERS';
 
 
 export const LOAD_CONFIG = 'LOAD_CONFIG';

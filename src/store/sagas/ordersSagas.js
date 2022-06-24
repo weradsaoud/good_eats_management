@@ -1,34 +1,41 @@
 
 import { all, put, takeEvery } from 'redux-saga/effects';
 import * as actionTypes from '../actions/actionsTypes';
-import { getOrders } from '../../API/api';
+import { getNewOrders, getLastOrderId } from '../../API/api';
 
-function* onGetOrders() {
+function* onGetNewOrders(action) {
     try {
-        const response = yield getOrders();
+        const response = yield getNewOrders(action.lastOrderId);
         if (response.status == 200) {
+            if (response.data == 'no_new_orders') {
 
+            } else {
+                yield put({ type: actionTypes.SAVENEWORDERS, newOrders: response.data });
+            }
         }
     } catch (error) {
 
     }
 }
 
-function* onGetLastOrderId(action){
+function* onGetLastOrderId(action) {
     const response = yield getLastOrderId();
+    if (response.status == 200) {
+        yield put({ type: actionTypes.SAVELASTORDERID, lastOrderId: response.data });
+    }
 }
 
 function* watchGetLastOrderId() {
     yield takeEvery(actionTypes.GETLASTORDERID, onGetLastOrderId);
 }
 
-function* watchGetOrders() {
-    yield takeEvery(actionTypes.GETSTORES, onGetOrders);
+function* watchGetNewOrders() {
+    yield takeEvery(actionTypes.GETNEWORDERS, onGetNewOrders);
 }
 
 export default function* ordersSagas() {
     yield all([
-        watchGetOrders(),
+        watchGetNewOrders(),
         watchGetLastOrderId()
     ]);
 }

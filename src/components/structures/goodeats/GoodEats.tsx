@@ -30,7 +30,8 @@ interface IProps {
     view: any,
     onDidmount: any,
     getNewOrders: any,
-    getLastOrderId: any
+    getLastOrderId: any,
+    lastOrderId: number
 }
 
 interface IState {
@@ -46,8 +47,10 @@ class GoodEats extends Component<IProps, IState>{
         toast.configure();
         this.props.getLastOrderId();
         setInterval(() => {
-            this.props.getNewOrders();
-        }, 10000);
+            console.log('happened');
+
+            this.props.getNewOrders(this.props.lastOrderId);
+        }, 5000);
     }
 
     public render(): React.ReactNode {
@@ -75,24 +78,6 @@ class GoodEats extends Component<IProps, IState>{
 
             </Routes >
         );
-
-
-        // let view: React.ReactNode;
-        // switch (this.props.view) {
-        //     case Views.LOGIN:
-        //         view = <LogIn></LogIn>
-        //         break;
-        //     case Views.DASHBOARD:
-        //         view = (<AdminLayout >
-        //             <div>
-        //                 hellllo
-        //             </div>
-        //         </AdminLayout>);
-        //         break;
-        //     default:
-        //         break;
-        // }
-        // return view;
     }
 }
 
@@ -100,15 +85,16 @@ const mapStateToProps = state => {
     return {
         config: state.config,
         login: state.login,
-        view: state.view.view
+        view: state.view.view,
+        lastOrderId: state.orders.lastOrderId
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
         onDidmount: () => dispatch({ type: actionsTypes.LOAD_CONFIG }),
-        getNewOrders: () => dispatch({type: actionsTypes.GETNEWORDERS}),
-        getLastOrderId: ()=>dispatch({type: actionsTypes.GETLASTORDERID})
+        getNewOrders: (lastOrderId: number) => dispatch({ type: actionsTypes.GETNEWORDERS, lastOrderId: lastOrderId }),
+        getLastOrderId: () => dispatch({ type: actionsTypes.GETLASTORDERID })
     }
 };
 

@@ -4,8 +4,9 @@ import { NotificationsNone, Language, Settings, ArrowRightTwoTone } from "@mater
 import { NavLink } from "react-router-dom";
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Typography from '@mui/material/Typography';
+import { connect } from "react-redux";
 
-export default function TopBar(props) {
+function TopBar(props) {
 
     //console.log("TopBar props: ", props);
     let breadcrumbs = [];
@@ -26,10 +27,10 @@ export default function TopBar(props) {
 
         breadcrumbs = segments.map((segment, index) => (index == (segments.length - 1)) ?
             (<Typography key={index} color="text.primary">
-                <span style={{"fontSize":"small", "margin":"0px"}}>{segment.replace("_", " ")}</span>
+                <span style={{ "fontSize": "small", "margin": "0px" }}>{segment.replace("_", " ")}</span>
             </Typography>) :
             (<NavLink key={index} to={paths[index]} className="NavLinkClass">
-                <p style={{"fontSize":"small", "margin":"0px"}}>{segment.replace("_", " ")}</p>
+                <p style={{ "fontSize": "small", "margin": "0px" }}>{segment.replace("_", " ")}</p>
             </NavLink>));
     }
 
@@ -41,7 +42,7 @@ export default function TopBar(props) {
                     <span className="logo">GoodEats</span>
                     <div className="topMiddle">
                         <Breadcrumbs
-                            separator={<ArrowRightTwoTone style={{"fontSize":"large"}}/>}
+                            separator={<ArrowRightTwoTone style={{ "fontSize": "large" }} />}
                             aria-label="breadcrumb"
                         >
                             {breadcrumbs}
@@ -52,7 +53,7 @@ export default function TopBar(props) {
                 <div className="topRight">
                     <div className="topbarIconContainer">
                         <NotificationsNone />
-                        <span className="topIconBadge">2</span>
+                        {(props.newOrders.length > 0) ? <span className="topIconBadge">{props.newOrders.length}</span> : null}
                     </div>
                     <div className="topbarIconContainer">
                         <Language />
@@ -67,3 +68,16 @@ export default function TopBar(props) {
         </div>
     );
 }
+
+const mapStateToProps = state => {
+    return {
+        newOrders: state.orders.newOrders
+    }
+};
+const mapDispatchToProps = dispatch => {
+    return {
+    }
+};
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(TopBar);
