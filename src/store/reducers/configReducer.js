@@ -1,7 +1,7 @@
 import * as actionsTypes from '../actions/actionsTypes'
 
 const initialState = {
-    baseUrl: "http://127.0.0.1:8000"
+    baseUrl: "http://api-good-eats.yummy-hunt.com"
 }
 
 const logInReducer = (state = initialState, action) => {
