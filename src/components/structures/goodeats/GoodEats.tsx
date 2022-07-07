@@ -24,6 +24,7 @@ import { toast } from 'react-toastify';
 import EditeStoreCategory from "../screens/storescategories/editestorecategory/EditeStoreCategory";
 import EditStore from "../screens/stores/EditStore/EditStore";
 import AddItemCategory from "../screens/itemscategories/additemcategory/AddItemCategory";
+import Pusher from 'pusher-js';
 
 interface IProps {
     login: any,
@@ -46,11 +47,20 @@ class GoodEats extends Component<IProps, IState>{
         //console.log('goodeats props: ', this.props);
         toast.configure();
         this.props.getLastOrderId();
-        setInterval(() => {
-            console.log('happened');
+        // setInterval(() => {
+        //     console.log('happened');
 
-            this.props.getNewOrders(this.props.lastOrderId);
-        }, 5000);
+        //     this.props.getNewOrders(this.props.lastOrderId);
+        // }, 5000);
+        var pusher = new Pusher('9121248d75a2e0d80efb', {
+            cluster: 'ap2'
+        });
+        var channel = pusher.subscribe('Order');
+        channel.bind('NewOrder', function (data) {
+            console.log('NewOrder: ', data);
+            alert(JSON.stringify(data));
+
+        });
     }
 
     public render(): React.ReactNode {
