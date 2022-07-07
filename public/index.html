@@ -29,8 +29,9 @@
       cluster: 'ap2'
     });
 
-    var channel = pusher.subscribe('my-channel');
-    channel.bind('my-event', function (data) {
+    var channel = pusher.subscribe('order');
+    channel.bind('OrderEvent', function (data) {
+      console.log('new order: ', data);
       alert(JSON.stringify(data));
     });
   </script>
