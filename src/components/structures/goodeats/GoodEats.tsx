@@ -32,7 +32,8 @@ interface IProps {
     onDidmount: any,
     getNewOrders: any,
     getLastOrderId: any,
-    lastOrderId: number
+    lastOrderId: number,
+    saveNewOrders: any
 }
 
 interface IState {
@@ -46,7 +47,7 @@ class GoodEats extends Component<IProps, IState>{
         this.props.onDidmount();
         //console.log('goodeats props: ', this.props);
         toast.configure();
-        this.props.getLastOrderId();
+        //this.props.getLastOrderId();
         // setInterval(() => {
         //     console.log('happened');
 
@@ -56,10 +57,8 @@ class GoodEats extends Component<IProps, IState>{
             cluster: 'ap2'
         });
         var channel = pusher.subscribe('Order');
-        channel.bind('NewOrder', function (data) {
-            console.log('NewOrder: ', data);
-            alert(JSON.stringify(data));
-
+        channel.bind('NewOrder', (data: any) => {
+            this.props.saveNewOrders(data);
         });
     }
 
@@ -103,8 +102,9 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         onDidmount: () => dispatch({ type: actionsTypes.LOAD_CONFIG }),
-        getNewOrders: (lastOrderId: number) => dispatch({ type: actionsTypes.GETNEWORDERS, lastOrderId: lastOrderId }),
-        getLastOrderId: () => dispatch({ type: actionsTypes.GETLASTORDERID })
+        //getNewOrders: (lastOrderId: number) => dispatch({ type: actionsTypes.GETNEWORDERS, lastOrderId: lastOrderId }),
+        //getLastOrderId: () => dispatch({ type: actionsTypes.GETLASTORDERID })
+        saveNewOrders: (newOrder) => dispatch({ type: actionsTypes.SAVENEWORDERS, newOrder: newOrder })
     }
 };
 

@@ -8,22 +8,13 @@ const initialState = {
 
 const logInReducer = (state = initialState, action) => {
     switch (action.type) {
-        case actionsTypes.SAVELASTORDERID:
-            console.log('from reducer lastOrderId: ', action.lastOrderId);
-            return {
-                ...state,
-                lastOrderId: action.lastOrderId
-            }
         case actionsTypes.SAVENEWORDERS:
-            console.log('newOrders: ', action.newOrders);
-            // let newOrders = [...action.newOrders];
-            // let newOrdersIds = newOrders.map((newOrder, idx) => {
-            //     return newOrder.id;
-            // });
-            // let lastOrderId = Math.max(...newOrdersIds);
+            console.log('newOrder: ', action.newOrder);
+            let newOrders_ = state.newOrders.filter((newOrder) => { return true });
+            newOrders_.push(action.newOrder);
             return {
                 ...state,
-                newOrders: [...action.newOrders]
+                newOrders: newOrders_
             }
         default:
             break;
