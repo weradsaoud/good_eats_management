@@ -10,6 +10,7 @@ import {
     Money,
     BubbleChart,
     LocalOffer,
+    LocalPizza,
     Copyright,
     LocalAtm
 } from "@material-ui/icons";
@@ -126,6 +127,14 @@ export default class Sidebar extends Component {
                                 >
                                     <LocalOffer className="sidebarIcon" />
                                     Offers
+                                </li>
+                            </NavLink>
+                            <NavLink to={routes.ordersPageUrl} className={"NavLinkClass"}>
+                                <li
+                                    className={this.props.tab == routes.ordersPageUrl ? "sidebarListItem active" : "sidebarListItem"}
+                                >
+                                    <LocalPizza className="sidebarIcon" />
+                                    Orders
                                 </li>
                             </NavLink>
                         </ul>

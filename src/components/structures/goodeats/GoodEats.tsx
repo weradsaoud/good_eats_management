@@ -25,6 +25,7 @@ import EditeStoreCategory from "../screens/storescategories/editestorecategory/E
 import EditStore from "../screens/stores/EditStore/EditStore";
 import AddItemCategory from "../screens/itemscategories/additemcategory/AddItemCategory";
 import Pusher from 'pusher-js';
+import Orders from "../screens/orders/Orders";
 
 interface IProps {
     login: any,
@@ -58,7 +59,10 @@ class GoodEats extends Component<IProps, IState>{
         });
         var channel = pusher.subscribe('Order');
         channel.bind('NewOrder', (data: any) => {
-            this.props.saveNewOrders(data);
+            console.log('NewOrder notification');
+            
+            this.props.getNewOrders();
+            //this.props.saveNewOrders(data);
         });
     }
 
@@ -80,6 +84,7 @@ class GoodEats extends Component<IProps, IState>{
                     <Route path={routes.optionsPageUrl} element={<Options />} />
                     <Route path={routes.extrasPageUrl} element={<Extras />} />
                     <Route path={routes.offersPageUrl} element={<Offers />} />
+                    <Route path={routes.ordersPageUrl} element={<Orders />} />
                     <Route path={routes.pricingVariantsPageUrl} element={<PricingVariants />} />
                     <Route path={routes.ownersPageUrl} element={<Owners />} />
                     <Route path={routes.cashiersPageUrl} element={<Cashiers />} />
@@ -102,9 +107,9 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         onDidmount: () => dispatch({ type: actionsTypes.LOAD_CONFIG }),
-        //getNewOrders: (lastOrderId: number) => dispatch({ type: actionsTypes.GETNEWORDERS, lastOrderId: lastOrderId }),
+        getNewOrders: () => dispatch({ type: actionsTypes.GETNEWORDERS }),
         //getLastOrderId: () => dispatch({ type: actionsTypes.GETLASTORDERID })
-        saveNewOrders: (newOrder) => dispatch({ type: actionsTypes.SAVENEWORDERS, newOrder: newOrder })
+        //saveNewOrders: (newOrder) => dispatch({ type: actionsTypes.SAVENEWORDERS, newOrder: newOrder })
     }
 };
 

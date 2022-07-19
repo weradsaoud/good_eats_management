@@ -14,6 +14,7 @@ const routes = {
     pricingVariantsPageUrl: '/pricing_variants',
     extrasPageUrl: '/extras',
     offersPageUrl: '/offers',
+    ordersPageUrl:'/orders',
     ownersPageUrl: '/owners',
     cashiersPageUrl: '/cashiers',
 }
