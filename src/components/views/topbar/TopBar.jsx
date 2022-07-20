@@ -1,12 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import "./topbar.css";
 import { NotificationsNone, Language, Settings, ArrowRightTwoTone } from "@material-ui/icons";
 import { NavLink } from "react-router-dom";
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Typography from '@mui/material/Typography';
 import { connect } from "react-redux";
+import NotificationsList from '../list/List';
 
 function TopBar(props) {
+
+
+
+    const [isNotificationListOpen, setIsNotificationListOpen] = useState(false);
+
+    document.addEventListener('mouseup', function (e) {
+        var container = document.getElementById('notification_list_div');
+        if (container)
+            if (!container.contains(e.target)) {
+                setIsNotificationListOpen(false);
+            }
+    });
+
+
+    let notificationsList = props.newOrders.map((nO, idx) => {
+        return {
+            id: nO.data.order_id,
+            content: nO.data.store.store_name
+        };
+    });
+
 
     //console.log("TopBar props: ", props);
     let breadcrumbs = [];
@@ -34,6 +56,11 @@ function TopBar(props) {
             </NavLink>));
     }
 
+    const toggleNotificationsList = () => {
+        console.log('clicked');
+        setIsNotificationListOpen(true);
+    };
+
 
     return (
         <div className="topbar">
@@ -51,7 +78,7 @@ function TopBar(props) {
                 </div>
 
                 <div className="topRight">
-                    <div className="topbarIconContainer">
+                    <div className="topbarIconContainer" onClick={toggleNotificationsList}>
                         <NotificationsNone />
                         {(props.newOrders.length > 0) ? <span className="topIconBadge">{props.newOrders.length}</span> : null}
                     </div>
@@ -65,6 +92,9 @@ function TopBar(props) {
                     <img src="https://images.pexels.com/photos/1526814/pexels-photo-1526814.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="" className="topAvatar" />
                 </div>
             </div>
+            {isNotificationListOpen ? <div id="notification_list_div" className="notification_list_div" onBlur={() => setIsNotificationListOpen(false)}>
+                <NotificationsList list={notificationsList} />
+            </div> : null}
         </div>
     );
 }
