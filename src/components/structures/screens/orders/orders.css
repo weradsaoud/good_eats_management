@@ -1,0 +1,64 @@
+.orders_accordion_div {
+    margin: 20px;
+}
+
+.items_div {
+    text-align: left;
+    margin: 10px;
+
+}
+
+.client_phone_literal_span {
+    margin-right: 20px;
+}
+
+.accordion_title {
+    font-weight: 700 !important;
+}
+
+.item_name_chip {
+    width: 100%;
+    justify-content: left !important;
+    background-color: rgb(222, 231, 231) !important;
+}
+
+.MuiChip-label {
+    overflow: hidden;
+    white-space: nowrap;
+    padding-left: 12px;
+    padding-right: 12px;
+    text-overflow: ellipsis;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.options_div {
+    margin: 7px 15px;
+}
+
+.option_div {
+    margin: 5px 20px;
+}
+
+.extras_div {
+    margin: 7px 15px;
+}
+
+.extra_div {
+    margin: 5px 20px;
+}
+.option_key_span{
+    margin-right: 20px;
+    font-weight: 650;
+}
+.options_literal_div{
+font-size: 18px;
+}
+
+.extras_literal_div{
+font-size: 18px;
+}
+
+.order_accordion_div{
+    margin-bottom: 15px;
+}
