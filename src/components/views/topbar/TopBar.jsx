@@ -6,6 +6,7 @@ import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Typography from '@mui/material/Typography';
 import { connect } from "react-redux";
 import NotificationsList from '../list/List';
+import * as actionsTypes from '../../../store/actions/actionsTypes';
 
 function TopBar(props) {
 
@@ -17,7 +18,7 @@ function TopBar(props) {
         var container = document.getElementById('notification_list_div');
         if (container)
             if (!container.contains(e.target)) {
-                setIsNotificationListOpen(false);
+                props.closeNotificationList();
             }
     });
 
@@ -78,7 +79,7 @@ function TopBar(props) {
                 </div>
 
                 <div className="topRight">
-                    <div className="topbarIconContainer" onClick={toggleNotificationsList}>
+                    <div className="topbarIconContainer" onClick={props.openNotificationsList}>
                         <NotificationsNone />
                         {(props.newOrders.length > 0) ? <span className="topIconBadge">{props.newOrders.length}</span> : null}
                     </div>
@@ -92,8 +93,9 @@ function TopBar(props) {
                     <img src="https://images.pexels.com/photos/1526814/pexels-photo-1526814.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="" className="topAvatar" />
                 </div>
             </div>
-            {isNotificationListOpen ? <div id="notification_list_div" className="notification_list_div" onBlur={() => setIsNotificationListOpen(false)}>
-                <NotificationsList list={notificationsList} />
+            {props.isNotificationListOpen ? <div id="notification_list_div" className="notification_list_div">
+                <NotificationsList
+                    list={notificationsList} />
             </div> : null}
         </div>
     );
@@ -101,11 +103,14 @@ function TopBar(props) {
 
 const mapStateToProps = state => {
     return {
-        newOrders: state.orders.newOrders
+        newOrders: state.orders.newOrders,
+        isNotificationListOpen: state.orders.isNotificationListOpen
     }
 };
 const mapDispatchToProps = dispatch => {
     return {
+        closeNotificationList: () => dispatch({ type: actionsTypes.CLOSENOTIFICATIONLISTOPEN }),
+        openNotificationsList: () => dispatch({ type: actionsTypes.OPENNOTIFICATIONLISTOPEN })
     }
 };
 

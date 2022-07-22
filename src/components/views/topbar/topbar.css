@@ -70,5 +70,5 @@
     right: 140px;
     max-height: 200px;
     overflow-y: scroll;
-    z-index: 100000;
+    z-index: 10000000;
 }

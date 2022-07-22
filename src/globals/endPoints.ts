@@ -17,7 +17,8 @@ const endPoints = {
     //orders
     getNewOrders: 'api/getNewOrders',
     getLastOrderId: 'api/getLastOrderId',
-    getOrders: 'api/getOrders'
+    getOrders: 'api/getOrders',
+    orderReady: 'api/orderReady'
 }
 
 export default endPoints;

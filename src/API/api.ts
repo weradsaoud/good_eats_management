@@ -59,7 +59,7 @@ export const uploadItemsCategories = (toAddItemsCategories) => {
 
 //Orders apis
 
-export const getNewOrders = (lastOrderId: number) => {
+export const getNewOrders = () => {
     return network.get(endPoints.getNewOrders, { params: null, headers: null, responseType: null });
 };
 
@@ -68,5 +68,9 @@ export const getLastOrderId = () => {
 };
 
 export const getOrders = () => {
-    return network.get(endPoints.getOrders)
+    return network.get(endPoints.getOrders);
+};
+
+export const orderReady = (orderId: number, notificationId: string) => {
+    return network.post(endPoints.orderReady, { params: { orderId: orderId, notificationId: notificationId }, headers: null });
 };

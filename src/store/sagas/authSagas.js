@@ -1,6 +1,6 @@
 import { all, put, takeEvery } from 'redux-saga/effects';
 import * as actionTypes from '../actions/actionsTypes';
-import { fetchLogin, fetchUserInfo } from '../../API/api';
+import { fetchLogin, fetchUserInfo, getNewOrders } from '../../API/api';
 
 function verifyEmail(email) {
     if (email == '') {
@@ -39,6 +39,15 @@ function* onLogin(action) {
                 const userInfoResponse = yield fetchUserInfo();
                 console.log('userInfoResponse: ', userInfoResponse);
                 if (userInfoResponse.status == 200) {
+                    const newOrdersResponse =yield getNewOrders();
+                    console.log('newOrdersResponse: ', newOrdersResponse);
+                    if (newOrdersResponse.status == 200) {
+                        if (newOrdersResponse.data == 'no_new_orders') {
+            
+                        } else {
+                            yield put({ type: actionTypes.SAVENEWORDERS, newOrders: newOrdersResponse.data });
+                        }
+                    }
                     yield put({ type: actionTypes.LOGIN_SUCCESS, user: userInfoResponse.data.user });
                 }
             }

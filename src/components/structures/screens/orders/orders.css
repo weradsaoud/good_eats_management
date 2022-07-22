@@ -47,18 +47,28 @@
 .extra_div {
     margin: 5px 20px;
 }
-.option_key_span{
+
+.option_key_span {
     margin-right: 20px;
     font-weight: 650;
 }
-.options_literal_div{
-font-size: 18px;
+
+.options_literal_div {
+    font-size: 18px;
 }
 
-.extras_literal_div{
-font-size: 18px;
+.extras_literal_div {
+    font-size: 18px;
 }
 
-.order_accordion_div{
+.order_accordion_div {
     margin-bottom: 15px;
+}
+
+.client_phone_div {
+    text-align: left;
+}
+.change_state_button{
+    background-color: rgb(105, 218, 122) !important;
+    text-transform: none !important;
 }
